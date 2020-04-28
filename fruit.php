@@ -1,8 +1,6 @@
 <?php
   class Fruit {
     protected $name;
-    protected $max_price;
-    protected $min_price;
     protected $price;
 
     function returnName()
