@@ -1,15 +1,17 @@
 <?php
-  require_once("peach.php");
-  require_once("strawberry.php");
+  // require_once("peach.php");
+  // require_once("strawberry.php");
+  require_once("market.php");
 
-  $strawberry = new Strawberry;
-  $peach = new Peach;
-  $fruits = array($strawberry, $peach);
-
+  $market = new Market;
+  $strawberries = $market->arriveStrawberry(15);
+  $peaches = $market->arrivePeach(15);
+  
+  $fruits = array($strawberries, $peaches);
   foreach($fruits as $fruit)
   {
-    $fruit->calculateMaxPrice(15);
-    $fruit->calculateMinPrice(15);
-    $fruit->calculateAveragePrice(15);
+    $market->returnMaxPrice($fruit);
+    $market->returnMinPrice($fruit);
+    $market->returnAveragePrice($fruit, 15);
   }
 ?>
