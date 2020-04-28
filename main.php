@@ -4,10 +4,10 @@
   require_once("market.php");
 
   $market = new Market;
-  $strawberries = $market->arriveStrawberry(15);
   $peaches = $market->arrivePeach(15);
+  $strawberries = $market->arriveStrawberry(15);
   
-  $fruits = array($strawberries, $peaches);
+  $fruits = array($peaches, $strawberries);
   foreach($fruits as $fruit)
   {
     $market->returnMaxPrice($fruit);

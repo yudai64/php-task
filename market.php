@@ -4,22 +4,6 @@
   
   class Market {
 
-    function arriveStrawberry($amount)
-    {
-      echo "イチゴを" . $amount . "個入荷しました。</br>";
-      $strawberries = array();
-      for($i = 1; $i <=$amount; $i++)
-      {
-        $strawberry = new Strawberry;
-        $price = $strawberry->returnPrice();
-        echo $i . "個目" . $price . "円</br>";
-        $strawberries[] = $strawberry;
-      }
-      echo "</br>";
-      return $strawberries;
-    }
-
-
     function arrivePeach($amount)
     {
       echo "桃を" . $amount . "個入荷しました。</br>";
@@ -35,6 +19,20 @@
       return $peaches;
     }
 
+    function arriveStrawberry($amount)
+    {
+      echo "イチゴを" . $amount . "個入荷しました。</br>";
+      $strawberries = array();
+      for($i = 1; $i <=$amount; $i++)
+      {
+        $strawberry = new Strawberry;
+        $price = $strawberry->returnPrice();
+        echo $i . "個目" . $price . "円</br>";
+        $strawberries[] = $strawberry;
+      }
+      echo "</br>";
+      return $strawberries;
+    }
 
     function returnMaxPrice($fruits)
     {
